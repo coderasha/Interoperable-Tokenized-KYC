@@ -1,6 +1,13 @@
-require("@nomicfoundation/hardhat-toolbox");
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomiclabs/hardhat-ethers";
+import "dotenv/config";
 
-/** @type import('hardhat/config').HardhatUserConfig */
-module.exports = {
-  solidity: "0.8.28",
+const config: HardhatUserConfig = {
+  solidity: "0.8.19",
+  networks: {
+    localhost: { url: "http://127.0.0.1:8545" },
+    // Add testnet/mainnet if needed via env keys
+  },
 };
+
+export default config;
